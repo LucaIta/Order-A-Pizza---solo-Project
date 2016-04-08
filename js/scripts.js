@@ -1,8 +1,11 @@
 // businnessLogic START
 
+orderedPizzasArray = []; // thisArray contains the pizzas ordered by the user
+
 function pizzas (size, toppings){ // pizza constructor
   this.size = size;
   this.toppings = toppings;
+  this.price = 0;
 }
 
 // this following prototype determines the pizza price
@@ -15,7 +18,9 @@ pizzas.prototype.prizeDeterminer = function () {
     price += 2;
   };
   this.toppings.forEach (function(topping){
+    if (topping != "none"){
     price += 1.5;
+    };
   });
   return price;
 };
@@ -30,9 +35,16 @@ $(document).ready(function(){
     pizzaSize = $("#size").val();
     var toppings = [];
     toppings.push($("#topping1").val());
-    toppings.push($("#topping2").val()); // here I need to understand what happens if one lement of the array is empty
+    toppings.push($("#topping2").val());
+    toppings.push($("#topping3").val());
+    toppings.push($("#topping4").val());
     var userPizza = new pizzas (pizzaSize, toppings);
-    console.log(userPizza.prizeDeterminer());
+    userPizza.price = userPizza.prizeDeterminer();
+    orderedPizzasArray.push(userPizza);
+    console.log(userPizza.toppings);
+    console.log(userPizza.price);
+    // $("#orderedPizzaDisplayer").append("<li>" + userPizza.size + "</li>"); this line of code would allow to append the pizzas by size
+
   })
 })
 
