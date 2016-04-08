@@ -1,3 +1,11 @@
 #orderedPizza {
   display: none;
 }
+
+#finalContainer {
+  font-weight: bold;
+}
+
+#orderButton {
+  display: none;
+}

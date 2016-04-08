@@ -39,6 +39,7 @@ pizzas.prototype.prizeDeterminer = function () {
 
 $(document).ready(function(){
   $("form").submit(function(event){
+    $("#orderButton").show();
     event.preventDefault();
     userAddress = $("#userAddress").val();
     pizzaSize = $("#size").val();
@@ -59,9 +60,7 @@ $(document).ready(function(){
     numberOfPizzas ++;
     var userPizza = new pizzas (pizzaSize, toppings, numberOfPizzas);
     userPizza.price = userPizza.prizeDeterminer();
-    // orderedPizzasArray.push(userPizza);
     $("#orderedPizzaDisplayer").append("<li><span id=" + userPizza.number + ">Pizza number " + userPizza.number + " (" + userPizza.size + ")</span></li>");
-    // $("#" + userPizza.number + "").click(function(){
     $("#orderedPizzaDisplayer li").last().click(function(){
       $("#sizeDetail").text("Size: " + userPizza.size);
       if (userPizza.toppings != 0){
@@ -81,11 +80,12 @@ $(document).ready(function(){
     if (numberOfPizzas != 0) {
       if (userAddress != ""){
       $("#finalContainer").append("<p>Order registered, you will be delivered " + numberOfPizzas + " pizzas at " + userAddress + "</p>")
-    } else {
-      $("#finalContainer").append("<p>Order registered, your pizza will be ready in 30 minutes</p>")
-    }
+      } else {
+        $("#finalContainer").append("<p>Order registered, your pizza will be ready in 30 minutes</p>")
+      }
     }
   });
+
 });
 
 
