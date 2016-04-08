@@ -8,7 +8,8 @@
     <title>Order A Pizza</title>
   </head>
   <body>
-    <div class="container">
+    <div id="finalContainer" class="container"></div>
+    <div id="mainContainer" class="container">
       <div class="row">
         <div class="col-md-6">
           <h2>Order A Pizza</h2>
@@ -52,33 +53,25 @@
               <option value="artichoke">artichoke</option>
               <option value="artichoke">anchovy</option>
             </select>
-
-
-            <!-- this area allow the user to select the topping, shouls understand how radio buttons works and improve it START -->
-
-            <!-- test area for checkboxes START -->
-
-            <!-- <div class="checkbox">
-              <label><input id="cheese" type="checkbox" value="cheese">cheese</label>
-            </div>
-            <div class="checkbox">
-              <label><input id="pepperoni" type="checkbox" value="pepperoni">pepperoni</label>
-            </div> -->
-
-            <!-- test area for checkboxes END -->
-
-
+           <!-- this area allow the user to select the topping, shouls understand how radio buttons works and improve it END -->
             <br>
-            <button type="submit" class="btn btn-default">Submit</button>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Delivery address</label>
+              <input type="text" class="form-control" id="userAddress" placeholder="Address">
+            </div>
+            <button type="submit" class="btn btn-default">Add pizza</button>
            </form>
-           <h3>Ordered Pizzas</h3>
+
+           <h3 id="orderedPizza">Ordered Pizzas</h3>
+           <p id="addressDisplayer"></p>
            <ul id="orderedPizzaDisplayer"></ul>
         </div>
+        <button id="orderButton" type="button" class="btn btn-default">Complete order</button>
         <div class="col-md-6" id="detailsOutput">
           <h2>Pizza Details</h2>
-          <p>Size: <span id="sizeDetail"></span></p>
-          <p>Toppings: <span id="toppingsDetail"></span></p>
-          <p>Price: <span id="priceDetail"></span></p>
+          <p id="sizeDetail"></p>
+          <p id="toppingsDetail"></p>
+          <p id="priceDetail"></p>
         <div>
       </div>
     </div>
