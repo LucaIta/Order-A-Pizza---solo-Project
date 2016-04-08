@@ -15,7 +15,7 @@ var pizzaDisplayer = function(arrayOfPizzas){
       } else {
         $("#toppingsDetail").empty(); // this line of code allow me to erase the "Toppings" section if no topping is selected for that pizza
       }
-      $("#priceDetail").text("Price: " + pizza.price + "$");
+      $("#priceDetail").text("Price: " + pizza.price + " $");
     });
     $("#orderedPizzaDisplayer li").last().dblclick(function(){
       $(this).remove();
