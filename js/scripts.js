@@ -35,16 +35,29 @@ $(document).ready(function(){
     event.preventDefault();
     pizzaSize = $("#size").val();
     var toppings = [];
-    toppings.push($("#topping1").val());
-    toppings.push($("#topping2").val());
-    toppings.push($("#topping3").val());
-    toppings.push($("#topping4").val());
+    if ($("#topping1").val() != "none"){
+      toppings.push($("#topping1").val());
+    }
+    if ($("#topping2").val() != "none"){
+      toppings.push($("#topping2").val());
+    }
+    if ($("#topping3").val() != "none"){
+      toppings.push($("#topping3").val());
+    }
+    if ($("#topping4").val() != "none"){
+      toppings.push($("#topping4").val());
+    }
     var numberOfPizzas = orderedPizzasArray.length + 1;
     var userPizza = new pizzas (pizzaSize, toppings, numberOfPizzas);
     userPizza.price = userPizza.prizeDeterminer();
     orderedPizzasArray.push(userPizza);
-    $("#orderedPizzaDisplayer").append("<li><span id='userPizza.number'>Pizza number " + userPizza.number + "</span></li>");
+    $("#orderedPizzaDisplayer").append("<li><span id=" + userPizza.number + ">Pizza number " + userPizza.number + "</span></li>");
     // $("#orderedPizzaDisplayer").text(orderedPizzasArray.forEach);
+    $("#" + userPizza.number + "").click(function(){
+      $("#sizeDetail").text(userPizza.size);
+      $("#toppingsDetail").text(userPizza.toppings);
+      $("#priceDetail").text(userPizza.price);
+    })
   })
 })
 
