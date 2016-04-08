@@ -2,10 +2,11 @@
 
 orderedPizzasArray = []; // thisArray contains the pizzas ordered by the user
 
-function pizzas (size, toppings){ // pizza constructor
+function pizzas (size, toppings, number){ // pizza constructor
   this.size = size;
   this.toppings = toppings;
   this.price = 0;
+  this.number = number;
 }
 
 // this following prototype determines the pizza price
@@ -38,13 +39,12 @@ $(document).ready(function(){
     toppings.push($("#topping2").val());
     toppings.push($("#topping3").val());
     toppings.push($("#topping4").val());
-    var userPizza = new pizzas (pizzaSize, toppings);
+    var numberOfPizzas = orderedPizzasArray.length + 1;
+    var userPizza = new pizzas (pizzaSize, toppings, numberOfPizzas);
     userPizza.price = userPizza.prizeDeterminer();
     orderedPizzasArray.push(userPizza);
-    console.log(userPizza.toppings);
-    console.log(userPizza.price);
-    // $("#orderedPizzaDisplayer").append("<li>" + userPizza.size + "</li>"); this line of code would allow to append the pizzas by size
-
+    $("#orderedPizzaDisplayer").append("<li><span id='userPizza.number'>Pizza number " + userPizza.number + "</span></li>");
+    // $("#orderedPizzaDisplayer").text(orderedPizzasArray.forEach);
   })
 })
 
