@@ -1,11 +1,8 @@
-#orderedPizza {
+#orderedPizza , #pizzasDetail , #orderButton {
   display: none;
 }
 
 #finalContainer {
-  font-weight: bold;
-}
-
-#orderButton {
   display: none;
+  font-weight: bold;
 }

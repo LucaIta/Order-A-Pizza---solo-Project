@@ -8,7 +8,9 @@
     <title>Order A Pizza</title>
   </head>
   <body>
-    <div id="finalContainer" class="container"></div>
+    <div id="finalContainer" class="container">
+      <button type="button" class="btn btn-default"><a href="index.html">New Order</a></button>
+    </div>
     <div id="mainContainer" class="container">
       <div class="row">
         <div class="col-md-6">
@@ -63,9 +65,13 @@
            </form>
            <br>
            <button id="orderButton" type="button" class="btn btn-primary">Complete order</button>
-           <h3 id="orderedPizza">Ordered Pizzas</h3>
-           <p id="addressDisplayer"></p>
-           <ul id="orderedPizzaDisplayer"></ul>
+           <div id="pizzasDetail">
+             <h3 id="orderedPizza">Ordered Pizzas</h3>
+             <p id="addressDisplayer"></p>
+             <p><span id="numberOfPizzasDisplayer"></span></p>
+             <p>Double click on a Pizza to cancel the order, click once to see the detail and pricing</p>
+             <ul id="orderedPizzaDisplayer"></ul>
+           </div>
 
         </div>
         <div class="col-md-6" id="detailsOutput">
