@@ -62,18 +62,11 @@ $(document).ready(function(){
     userAddress = $("#userAddress").val();
     pizzaSize = $("#size").val();
     var toppings = [];
-    if ($("#topping1").val() != "none"){
-      toppings.push($("#topping1").val());
-    }
-    if ($("#topping2").val() != "none"){
-      toppings.push($("#topping2").val());
-    }
-    if ($("#topping3").val() != "none"){
-      toppings.push($("#topping3").val());
-    }
-    if ($("#topping4").val() != "none"){
-      toppings.push($("#topping4").val());
-    }
+    $(".checkbox input").each(function(){
+      if (this.checked === true){
+        toppings.push($(this).val());
+      }
+    })
     numberOfPizzas ++;
     var userPizza = new pizzas (pizzaSize, toppings, numberOfPizzas);
     userPizza.price = userPizza.prizeDeterminer();
@@ -98,7 +91,5 @@ $(document).ready(function(){
     }
   });
 });
-
-
 
 // user interface END
